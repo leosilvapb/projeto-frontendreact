@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { createGlobalStyle } from 'styled-components';
+import { Filter } from './Components/Filters/Filter';
+import { Home } from './Components/ProductList/Home/Home';
+import { Cart } from './Components/ShoppingCart/Cart/Cart';
+
+
+const GlobalStyles = createGlobalStyle` //cria uma estilização global
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+`
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStyles />
+      <Filter />
+      <Home />
+      <Cart />
+    </>
   );
 }
 
