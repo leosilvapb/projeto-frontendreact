@@ -19,10 +19,6 @@ justify-content: space-between;
 padding-top: 10px;
 `
 
-export const Label = styled.label`
-
-`
-
 export const Cards = styled.div`
 /* border: 1px solid black; */
 display: flex;
