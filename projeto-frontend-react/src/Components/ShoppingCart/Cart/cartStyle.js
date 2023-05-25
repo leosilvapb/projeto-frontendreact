@@ -7,6 +7,7 @@ grid-column: 3/4;
 display: flex;
 flex-direction: column;
 gap: 8px;
+padding-right: 10px;
 `
 
 

@@ -2,12 +2,13 @@ import React from "react";
 import { ProductCards } from "../ProductCard/ProductCard";
 import { Cabecalho, Cards, HomeContainer, Label } from "./homeStyle";
 
-export const Home = () => {
+
+export const Home = ({ productList }) => {
     return (
         <>
             <HomeContainer>
                 <Cabecalho>
-                    <p>Quantidade de produtos:</p>
+                    <p>Quantidade de produtos: {productList.length} </p>
                     <Label>
                         Ordenar:
                         <select>
@@ -17,9 +18,11 @@ export const Home = () => {
                     </Label>
                 </Cabecalho>
                 <Cards>
-                    <ProductCards />
-                    <ProductCards />
-                    <ProductCards />
+                    <ProductCards productList={productList[0]} />
+                    <ProductCards productList={productList[1]} />
+                    <ProductCards productList={productList[2]} />
+                    <ProductCards productList={productList[3]} />
+
                 </Cards>
             </HomeContainer>
         </>
