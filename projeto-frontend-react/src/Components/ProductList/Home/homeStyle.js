@@ -19,10 +19,15 @@ justify-content: space-between;
 padding-top: 10px;
 `
 
+export const Label = styled.label`
+
+`
+
 export const Cards = styled.div`
 /* border: 1px solid black; */
 display: flex;
 flex-wrap: wrap;
-justify-content: space-around;
+justify-content: flex-start;
 padding: 16px;
+gap: 30px;
 `
