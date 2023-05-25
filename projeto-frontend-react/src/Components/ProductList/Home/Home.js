@@ -1,9 +1,15 @@
 import React from "react";
 import { ProductCards } from "../ProductCard/ProductCard";
 import { Cabecalho, Cards, HomeContainer, Label } from "./homeStyle";
+import { useState } from "react";
 
 
 export const Home = ({ productList }) => {
+    const [ordination, setOrdination] = useState("")
+
+    const handleSelect = (e) => {
+        setOrdination(e.target.value)
+    }
     return (
         <>
             <HomeContainer>
@@ -11,7 +17,11 @@ export const Home = ({ productList }) => {
                     <p>Quantidade de produtos: {productList.length} </p>
                     <Label>
                         Ordenar:
-                        <select>
+                        <select
+                            value={ordination}
+                            onChange={handleSelect}
+                        >
+                            <option>Selecione</option>
                             <option>Decrescente</option>
                             <option>Crescente</option>
                         </select>

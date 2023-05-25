@@ -3,9 +3,7 @@ import { Filter } from './Components/Filters/Filter';
 import { Home } from './Components/ProductList/Home/Home';
 import { Cart } from './Components/ShoppingCart/Cart/Cart';
 import { productList } from './Components/assents/productsList';
-
-
-
+import React, { useState } from 'react';
 
 const GlobalStyles = createGlobalStyle` //cria uma estilização global
 *{
@@ -29,7 +27,11 @@ column-gap: 8px;
 `
 
 function App() {
-  console.log(productList);
+  const [cart, setCart] = useState("")
+  const [amount, setAmount] = useState("")
+  const [minFilter, setMinFilter] = useState("")
+  const [maxFilter, setMaxFilter] = useState("")
+  const [searchFilter, setSearchFilter] = useState("")
   return (
     <>
       <GlobalStyles />
