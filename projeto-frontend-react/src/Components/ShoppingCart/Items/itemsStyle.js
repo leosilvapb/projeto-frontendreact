@@ -11,8 +11,10 @@ justify-content: space-between;
 `
 export const Remover = styled.button`
 width: 45%;
+border-radius: 10px;
+height: 30px;
 `
-export const TituloCarrinho = styled.h2`
-width: 100%;
-
+export const Image = styled.img`
+width: 40px;
+height: 40px;
 `
