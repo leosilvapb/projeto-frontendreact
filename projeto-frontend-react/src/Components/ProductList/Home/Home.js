@@ -4,7 +4,7 @@ import { Cabecalho, Cards, HomeContainer, Label } from "./homeStyle";
 import { useState } from "react";
 
 
-export const Home = ({ productList }) => {
+export const Home = ({ productList, cart, setCart, amount, setAmount, }) => {
     const [ordination, setOrdination] = useState("")
 
     const handleSelect = (e) => {
@@ -21,7 +21,7 @@ export const Home = ({ productList }) => {
                             value={ordination}
                             onChange={handleSelect}
                         >
-                            <option>Selecione</option>
+                            <option disabled>Selecione</option>
                             <option>Decrescente</option>
                             <option>Crescente</option>
                         </select>

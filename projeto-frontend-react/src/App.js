@@ -29,18 +29,34 @@ column-gap: 8px;
 function App() {
   const [cart, setCart] = useState("")
   const [amount, setAmount] = useState("")
-  const [minFilter, setMinFilter] = useState("")
-  const [maxFilter, setMaxFilter] = useState("")
+  const [minFilter, setMinFilter] = useState(0)
+  const [maxFilter, setMaxFilter] = useState(0)
   const [searchFilter, setSearchFilter] = useState("")
   return (
     <>
       <GlobalStyles />
       <Container>
-        <Filter />
+        <Filter
+          minFilter={minFilter}
+          setMinFilter={setMinFilter}
+          maxFilter={maxFilter}
+          setMaxFilter={setMaxFilter}
+          searchFilter={searchFilter}
+          setSearchFilter={setSearchFilter}
+        />
         <Home
           productList={productList}
+          cart={cart}
+          setCart={setCart}
+          amount={amount}
+          setAmount={setAmount}
         />
-        <Cart />
+        <Cart
+          cart={cart}
+          setCart={setCart}
+          amount={amount}
+          setAmount={setAmount}
+        />
       </Container>
     </>
   );
