@@ -9,7 +9,7 @@ padding:8px;
 
 
 `
-export const Cabecalho = styled.div`
+export const HeaderHome = styled.div`
 width: 100%;
 /* border: 1px solid black; */
 height: 4vh;
@@ -20,7 +20,7 @@ padding-top: 10px;
 `
 
 export const Label = styled.label`
-
+padding-right: 25px;
 `
 
 export const Cards = styled.div`
@@ -30,4 +30,7 @@ flex-wrap: wrap;
 justify-content: flex-start;
 padding: 16px;
 gap: 30px;
+`
+export const QuantProducts = styled.p`
+padding-left: 15px;
 `

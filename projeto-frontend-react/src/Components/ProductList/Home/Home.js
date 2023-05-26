@@ -1,6 +1,6 @@
 import React from "react";
 import { ProductCards } from "../ProductCard/ProductCard";
-import { Cabecalho, Cards, HomeContainer, Label } from "./homeStyle";
+import { HeaderHome, Cards, HomeContainer, Label, QuantProducts } from "./homeStyle";
 import { useState } from "react";
 
 
@@ -10,11 +10,35 @@ export const Home = ({ productList, cart, setCart, amount, setAmount, }) => {
     const handleSelect = (e) => {
         setOrdination(e.target.value)
     }
+
+    const addToCart = (products) => {
+        {/*pega as informações da lista de produtos*/ }
+        const newProduct = cart.find((productCallBack) => products.id === productCallBack.id) //CallBack = funcação que recebe outra função
+        if (newProduct === undefined) {
+            products = { ...products, quantify: 1 }
+            setCart([...cart, products])
+            const valueTotal = amount + products.value
+            setAmount(valueTotal)
+        } else {
+            const newCart = cart.map((products) => {
+                if (products.id === newProduct.id) {
+                    const valueTotal = amount + products.value
+                    setAmount(valueTotal)
+                    return { ...newProduct, quantify: newProduct.quantify + 1 }
+                } else {
+                    return products
+                }
+            })
+            setCart(newCart)
+        }
+    }
+    console.log(amount);
     return (
         <>
             <HomeContainer>
-                <Cabecalho>
-                    <p>Quantidade de produtos: {productList.length} </p>
+                <HeaderHome>
+                    {/* PEGA O TOTAL DO ARRAY E MOSTRA A QUANTIDADE DE PRODUTOS QUE TEM NO ARRAY */}
+                    <QuantProducts>Quantidade de produtos: {productList.length} </QuantProducts>
                     <Label>
                         Ordenar:
                         <select
@@ -26,13 +50,18 @@ export const Home = ({ productList, cart, setCart, amount, setAmount, }) => {
                             <option>Crescente</option>
                         </select>
                     </Label>
-                </Cabecalho>
+                </HeaderHome>
                 <Cards>
-                    <ProductCards productList={productList[0]} />
-                    <ProductCards productList={productList[1]} />
-                    <ProductCards productList={productList[2]} />
-                    <ProductCards productList={productList[3]} />
+                    {/* <ProductCards /> chamada do componente sem o uso do map */}
+                    {
+                        productList.map((product) => {
+                            return <ProductCards
+                                productList={product}
+                                key={product.id}
+                                addForCart={addToCart} /> //Chamanda do componente com map
 
+                        })
+                    }
                 </Cards>
             </HomeContainer>
         </>

@@ -1,16 +1,18 @@
 import React from "react";
-import { ItemsCarrinho, ItemsContainer, Remover, Titulo, TituloCarrinho } from "./itemsStyle";
+import { ItemsCarrinho, ItemsContainer, Remover, Image } from "./itemsStyle";
 
-export const Items = () => {
+export const Items = ({ name, value, quantify, image, id, removeItem }) => {
     return (
         <>
             <ItemsContainer>
-                <TituloCarrinho> Carrinho</TituloCarrinho>
+
                 <ItemsCarrinho>
-                    <p>x0 Nome do Produto</p>
-                    <Remover>Remover</Remover>
+                    <Image src={image} alt="" ></Image>
+                    <p> {name}</p>
+                    <p>Valor: R${(value.toFixed(2))}</p>
+                    <Remover onClick={() => removeItem(id)}>Remover</Remover>
                 </ItemsCarrinho>
-                <p>Valor Total: 0</p>
+                <p>quantidade: {quantify}</p>
             </ItemsContainer>
         </>
     )

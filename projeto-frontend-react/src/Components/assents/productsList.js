@@ -25,5 +25,6 @@ export const productList =
             value: 300.0,
             imageUrl: "https://picsum.photos/300/335?a=4"
         }
+
     ];
 

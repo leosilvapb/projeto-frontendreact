@@ -17,6 +17,17 @@ const GlobalStyles = createGlobalStyle` //cria uma estilização global
 const Container = styled.div`
 color: white;
 background-color: #54544d;
+background: url(https://images3.alphacoders.com/563/563119.jpg) ; 
+    background-repeat: no-repeat;
+    background-size:100%;
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+    padding: 3em;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-size: cover;
 width: 100vw;
 height: 100vh;
 display: grid;
@@ -27,8 +38,8 @@ column-gap: 8px;
 `
 
 function App() {
-  const [cart, setCart] = useState("")
-  const [amount, setAmount] = useState("")
+  const [cart, setCart] = useState([])
+  const [amount, setAmount] = useState(0)
   const [minFilter, setMinFilter] = useState(0)
   const [maxFilter, setMaxFilter] = useState(0)
   const [searchFilter, setSearchFilter] = useState("")
