@@ -4,7 +4,7 @@ export const productList =
         {
             id: 1,
             name: "produto 1",
-            value: 10000.0,
+            value: 1000.0,
             imageUrl: "https://picsum.photos/300/335?a=1"
         },
         {

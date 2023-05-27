@@ -1,15 +1,57 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ProductCards } from "../ProductCard/ProductCard";
 import { HeaderHome, Cards, HomeContainer, Label, QuantProducts } from "./homeStyle";
 import { useState } from "react";
 
 
-export const Home = ({ productList, cart, setCart, amount, setAmount, }) => {
+export const Home = ({ productList, cart, setCart, amount, setAmount, stateOrdination, setStateOrdanition, initialList, setInitialList }) => {
     const [ordination, setOrdination] = useState("")
 
     const handleSelect = (e) => {
         setOrdination(e.target.value)
     }
+
+    useEffect(() => {
+        stateOrdination.sort((a, b) => {
+            if (ordination === "Decrescente") {
+                if (a.name < b.name) {
+                    return 1;
+                }
+                if (a.name > b.name) {
+                    return -1;
+                }
+            } else if (ordination === "Crescente") {
+                if (a.name > b.name) {
+                    return 1;
+                }
+                if (a.name < b.name) {
+                    return -1;
+                }
+            }
+        });
+        initialList.sort((a, b) => {
+            if (ordination === "Decrescente") {
+                if (a.name < b.name) {
+                    return 1
+                }
+                if (a.name > b.name) {
+                    return -1
+                }
+            }
+            else if (ordination === "Crescente") {
+                if (a.name > b.name) {
+                    return 1
+                }
+                if (a.name < b.name) {
+                    return -1
+                }
+            }
+        })
+        setStateOrdanition([...stateOrdination])
+        setInitialList([...initialList])
+
+    }, [ordination])
+
 
     const addToCart = (products) => {
         {/*pega as informações da lista de produtos*/ }
@@ -32,29 +74,31 @@ export const Home = ({ productList, cart, setCart, amount, setAmount, }) => {
             setCart(newCart)
         }
     }
-    console.log(amount);
+
+
+
     return (
         <>
             <HomeContainer>
                 <HeaderHome>
                     {/* PEGA O TOTAL DO ARRAY E MOSTRA A QUANTIDADE DE PRODUTOS QUE TEM NO ARRAY */}
-                    <QuantProducts>Quantidade de produtos: {productList.length} </QuantProducts>
+                    <QuantProducts>Quantidade de produtos: {stateOrdination.length} </QuantProducts>
                     <Label>
                         Ordenar:
                         <select
                             value={ordination}
                             onChange={handleSelect}
                         >
-                            <option disabled>Selecione</option>
-                            <option>Decrescente</option>
-                            <option>Crescente</option>
+                            <option value="" disabled>Selecione</option>
+                            <option value="Decrescente" >Decrescente</option>
+                            <option value="Crescente" >Crescente</option>
                         </select>
                     </Label>
                 </HeaderHome>
                 <Cards>
                     {/* <ProductCards /> chamada do componente sem o uso do map */}
                     {
-                        productList.map((product) => {
+                        stateOrdination.map((product) => {
                             return <ProductCards
                                 productList={product}
                                 key={product.id}

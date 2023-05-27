@@ -3,7 +3,7 @@ import { Filter } from './Components/Filters/Filter';
 import { Home } from './Components/ProductList/Home/Home';
 import { Cart } from './Components/ShoppingCart/Cart/Cart';
 import { productList } from './Components/assents/productsList';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const GlobalStyles = createGlobalStyle` //cria uma estilização global
 *{
@@ -15,7 +15,7 @@ const GlobalStyles = createGlobalStyle` //cria uma estilização global
 `
 
 const Container = styled.div`
-color: white;
+color: #ffffff;
 background-color: #54544d;
 background: url(https://images3.alphacoders.com/563/563119.jpg) ; 
     background-repeat: no-repeat;
@@ -43,6 +43,22 @@ function App() {
   const [minFilter, setMinFilter] = useState(0)
   const [maxFilter, setMaxFilter] = useState(0)
   const [searchFilter, setSearchFilter] = useState("")
+  // const [filterList, setFilterList] = useState([...productList])
+  const [stateOrdination, setStateOrdanition] = useState([...productList])
+  const [initialList, setInitialList] = useState([...productList])
+
+  useEffect(() => {
+    setStateOrdanition(
+      initialList.filter((products) => {
+        return minFilter ? products.value >= minFilter : products
+      }).filter((products) => {
+        return maxFilter ? products.value <= maxFilter : products
+      }).filter((products) => {
+        return searchFilter ? products.name.toLowerCase().includes(searchFilter.toLowerCase()) : products
+      })
+    )
+  }, [minFilter, maxFilter, searchFilter])
+
   return (
     <>
       <GlobalStyles />
@@ -56,11 +72,15 @@ function App() {
           setSearchFilter={setSearchFilter}
         />
         <Home
-          productList={productList}
+          // productList={filterList}
           cart={cart}
           setCart={setCart}
           amount={amount}
           setAmount={setAmount}
+          stateOrdination={stateOrdination}
+          setStateOrdanition={setStateOrdanition}
+          initialList={initialList}
+          setInitialList={setInitialList}
         />
         <Cart
           cart={cart}
