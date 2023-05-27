@@ -14,8 +14,12 @@ justify-content: center;
 align-items: center;
 `
 export const AddCarrinho = styled.button`
+background-color: #3357f7;
 display: block;
 margin: auto;
+border-radius: 10px;
+width: 50%;
+height: 6%;
 `
 export const InfoProduct = styled.p`
 padding: 10px;
