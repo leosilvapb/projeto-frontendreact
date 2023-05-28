@@ -1,3 +1,4 @@
+import React from "react"
 import { H1 } from "./headerStyle"
 
 export const Header = () => {
