@@ -35,7 +35,7 @@ height: 100vh;
 display: grid;
 grid-template-columns: 1fr 3fr 1fr;
 padding: 15px;
-column-gap: 1vh;
+column-gap: 8px;
 
 `
 
@@ -59,22 +59,6 @@ function App() {
       })
     )
   }, [minFilter, maxFilter, searchFilter])
-
-  useEffect(() => {
-    setTimeout(() => {
-      const cartSave = JSON.stringify(cart)
-      const amountSave = JSON.stringify(amount)
-      localStorage.setItem("cart", cartSave)
-      localStorage.setItem("amount", amountSave)
-    }, 10)
-  }, [cart])
-
-  useEffect(() => {
-    const loadCart = JSON.parse(localStorage.getItem("cart"))
-    const loadAmount = JSON.parse(localStorage.getItem("amount"))
-    setCart([...loadCart])
-    setAmount(loadAmount)
-  }, [])
 
   return (
     <>
@@ -111,3 +95,5 @@ function App() {
 }
 
 export default App;
+
+//PR para correção
