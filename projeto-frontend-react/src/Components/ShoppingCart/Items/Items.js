@@ -1,5 +1,5 @@
 import React from "react";
-import { ItemsCarrinho, ItemsContainer, Remover, Image } from "./itemsStyle";
+import { ItemsCarrinho, ItemsContainer, Remover, Image, Quantity, Value } from "./itemsStyle";
 
 export const Items = ({ name, value, quantify, image, id, removeItem }) => {
     return (
@@ -9,10 +9,10 @@ export const Items = ({ name, value, quantify, image, id, removeItem }) => {
                 <ItemsCarrinho>
                     <Image src={image} alt="" ></Image>
                     <p> {name}</p>
-                    <p>Valor: R${(value.toFixed(2))}</p>
+                    <Value>Valor: R${(value.toFixed(2))}</Value>
                     <Remover onClick={() => removeItem(id)}>Remover</Remover>
                 </ItemsCarrinho>
-                <p>quantidade: {quantify}</p>
+                <Quantity>quantidade: {quantify}</Quantity>
             </ItemsContainer>
         </>
     )

@@ -1,6 +1,6 @@
 import React from "react";
 import { Items } from "../Items/Items";
-import { CartContainer, TituloCarrinho } from "./cartStyle";
+import { CartContainer, TituloCarrinho, ValorTotal } from "./cartStyle";
 
 export const Cart = ({ cart, amount, setAmount, setCart }) => {
     const removeItem = (id) => {
@@ -20,7 +20,7 @@ export const Cart = ({ cart, amount, setAmount, setCart }) => {
     return (
         <>
             <CartContainer>
-                <TituloCarrinho> Carrinho</TituloCarrinho>
+                <TituloCarrinho> Carrinho </TituloCarrinho>
                 {cart.map((products) => {
                     return <Items
                         key={products.id}
@@ -34,7 +34,7 @@ export const Cart = ({ cart, amount, setAmount, setCart }) => {
 
 
                 })}
-                <p>Valor Total: R${amount.toFixed(2)}</p>
+                <ValorTotal>Valor Total: R${amount.toFixed(2)}</ValorTotal>
             </CartContainer>
         </>
     )

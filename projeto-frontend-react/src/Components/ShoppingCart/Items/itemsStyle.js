@@ -3,18 +3,31 @@ import styled from "styled-components";
 export const ItemsContainer = styled.div`
 padding-left: 15px;
 padding-top: 15px;
+font-size: 18px;
 `
 export const ItemsCarrinho = styled.div`
 display: flex;
 flex-direction: row;
-justify-content: space-between;
+align-items: center;
 `
 export const Remover = styled.button`
-width: 45%;
+background-color: #8e33e4;
+color: white;
+width: 30%;
 border-radius: 10px;
 height: 30px;
+&:hover{
+    background-color: #9c17c5;
+}
 `
 export const Image = styled.img`
-width: 40px;
-height: 40px;
+padding-right: 5px;
+width: 35px;
+height: 35px;
+`
+export const Quantity = styled.p`
+padding-top:10px ;
+`
+export const Value = styled.p`
+padding-right: 10px;
 `

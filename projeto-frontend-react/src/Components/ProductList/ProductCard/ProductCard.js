@@ -1,5 +1,5 @@
 import React from "react";
-import { AddCarrinho, ImagemCard, InfoProduct, ProductCardContainer } from "./productCardStyle";
+import { AddCarrinho, ImagemCard, Images, InfoProduct, ProductCardContainer } from "./productCardStyle";
 
 export const ProductCards = ({ productList, addForCart }) => {
 
@@ -7,10 +7,10 @@ export const ProductCards = ({ productList, addForCart }) => {
         <>
             <ProductCardContainer>
                 <ImagemCard>
-                    <img src={productList.imageUrl} />
+                    <Images src={productList.imageUrl} />
                 </ImagemCard>
                 <InfoProduct>{productList.name}</InfoProduct>
-                <InfoProduct>{productList.value}</InfoProduct>
+                <InfoProduct>R$ {productList.value}</InfoProduct>
                 <AddCarrinho onClick={() => addForCart(productList)}>Adicionar ao Carrinho</AddCarrinho>
             </ProductCardContainer>
         </>
