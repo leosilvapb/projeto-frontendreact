@@ -1,13 +1,3 @@
-import discoVoador1 from "../../imgs/image1.jpg"
-import discoVoador2 from "../../imgs/image2.jpg"
-import planetas from "../../imgs/image3.jpeg"
-import discoVoador4 from "../../imgs/image4.jpg"
-import discoVoador5 from "../../imgs/image5.jpg"
-import astronauta6 from "../../imgs/image6.jpg"
-import astronauta7 from "../../imgs/image7.jpg"
-import astronauta8 from "../../imgs/image8.jpg"
-import astronauta9 from "../../imgs/image9.jpg"
-import astronauta10 from "../../imgs/image10.jpg"
 
 export const productList =
 
@@ -15,62 +5,62 @@ export const productList =
         {
             id: 1,
             name: "Camiseta Astronauta",
-            value: 49.99,
-            imageUrl: astronauta10
+            value: 49.00,
+            imageUrl: "https://imgtr.ee/images/2023/05/28/wgzzX.jpg"
         },
         {
             id: 2,
             name: "Camiseta Disco Voador",
-            value: 54.99,
-            imageUrl: discoVoador4
+            value: 54.00,
+            imageUrl: "https://imgtr.ee/images/2023/05/28/wgtan.jpg"
         },
         {
             id: 3,
             name: "Camiseta Abdução",
-            value: 39.99,
-            imageUrl: discoVoador1
+            value: 39.00,
+            imageUrl: "https://imgtr.ee/images/2023/05/28/wgB6c.jpg"
         },
         {
             id: 4,
             name: "Camiseta Alien",
-            value: 44.99,
-            imageUrl: discoVoador2
+            value: 44.00,
+            imageUrl: "https://imgtr.ee/images/2023/05/28/wgEFY.webp"
         },
         {
             id: 5,
             name: "Camiseta Planetas",
-            value: 42.99,
-            imageUrl: planetas
+            value: 42.00,
+            imageUrl: "https://imgtr.ee/images/2023/05/28/wgukq.webp"
         },
         {
             id: 6,
             name: " Camiseta Alien Club",
-            value: 44.99,
-            imageUrl: discoVoador5
+            value: 44.00,
+            imageUrl: "https://imgtr.ee/images/2023/05/28/wgFTs.webp"
         },
         {
             id: 7,
             name: "Camiseta Astronauta Feliz",
-            value: 57.99,
-            imageUrl: astronauta6
+            value: 57.00,
+            imageUrl: "https://imgtr.ee/images/2023/05/28/wgjOM.jpg"
         },
         {
             id: 8,
             name: "Camiseta Astronauta no espaço",
-            value: 59.99,
-            imageUrl: astronauta7
+            value: 59.00,
+            imageUrl: "https://imgtr.ee/images/2023/05/28/wgfsD.jpg"
         },
         {
             id: 9,
             name: "Camiseta Astronauta e a Lua",
-            value: 48.99,
-            imageUrl: astronauta8
+            value: 48.00,
+            imageUrl: "https://imgtr.ee/images/2023/05/28/wg3S4.jpg"
         },
         {
             id: 10,
             name: "Camiseta Astronauta e o Violão",
-            value: 47.99,
-            imageUrl: astronauta9
+            value: 47.00,
+            imageUrl: "https://imgtr.ee/images/2023/05/28/wgPA1.jpg"
         }
 
     ];

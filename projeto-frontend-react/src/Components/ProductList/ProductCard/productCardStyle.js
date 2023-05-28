@@ -31,6 +31,7 @@ width: 50%;
 height: 6%;
 color: white;
 font-size: 14px;
+cursor: pointer;
 &:hover{
     background-color: #9c17c5;
 }
