@@ -4,6 +4,7 @@ import { Home } from './Components/ProductList/Home/Home';
 import { Cart } from './Components/ShoppingCart/Cart/Cart';
 import { productList } from './Components/assents/productsList';
 import React, { useEffect, useState } from 'react';
+import { Header } from './Components/Header/Header';
 
 const GlobalStyles = createGlobalStyle` //cria uma estilização global
 *{
@@ -15,9 +16,10 @@ const GlobalStyles = createGlobalStyle` //cria uma estilização global
 `
 
 const Container = styled.div`
+font-size: medium;
 color: #ffffff;
 background-color: #54544d;
-background: url(https://images3.alphacoders.com/563/563119.jpg) ; 
+background: url(https://images.alphacoders.com/193/193.jpg) ; 
     background-repeat: no-repeat;
     background-size:100%;
     bottom: 0;
@@ -43,7 +45,6 @@ function App() {
   const [minFilter, setMinFilter] = useState(0)
   const [maxFilter, setMaxFilter] = useState(0)
   const [searchFilter, setSearchFilter] = useState("")
-  // const [filterList, setFilterList] = useState([...productList])
   const [stateOrdination, setStateOrdanition] = useState([...productList])
   const [initialList, setInitialList] = useState([...productList])
 
@@ -63,6 +64,7 @@ function App() {
     <>
       <GlobalStyles />
       <Container>
+        <Header />
         <Filter
           minFilter={minFilter}
           setMinFilter={setMinFilter}
@@ -72,7 +74,6 @@ function App() {
           setSearchFilter={setSearchFilter}
         />
         <Home
-          // productList={filterList}
           cart={cart}
           setCart={setCart}
           amount={amount}

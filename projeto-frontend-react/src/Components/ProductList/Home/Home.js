@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { ProductCards } from "../ProductCard/ProductCard";
-import { HeaderHome, Cards, HomeContainer, Label, QuantProducts } from "./homeStyle";
+import { HeaderHome, Cards, HomeContainer, Label, QuantProducts, Option, Select } from "./homeStyle";
 import { useState } from "react";
 
 
-export const Home = ({ productList, cart, setCart, amount, setAmount, stateOrdination, setStateOrdanition, initialList, setInitialList }) => {
+export const Home = ({ cart, setCart, amount, setAmount, stateOrdination, setStateOrdanition, initialList, setInitialList }) => {
     const [ordination, setOrdination] = useState("")
 
     const handleSelect = (e) => {
@@ -14,35 +14,35 @@ export const Home = ({ productList, cart, setCart, amount, setAmount, stateOrdin
     useEffect(() => {
         stateOrdination.sort((a, b) => {
             if (ordination === "Decrescente") {
-                if (a.name < b.name) {
+                if (a.value < b.value) {
                     return 1;
                 }
-                if (a.name > b.name) {
+                if (a.value > b.value) {
                     return -1;
                 }
             } else if (ordination === "Crescente") {
-                if (a.name > b.name) {
+                if (a.value > b.value) {
                     return 1;
                 }
-                if (a.name < b.name) {
+                if (a.value < b.value) {
                     return -1;
                 }
             }
         });
         initialList.sort((a, b) => {
             if (ordination === "Decrescente") {
-                if (a.name < b.name) {
+                if (a.value < b.value) {
                     return 1
                 }
-                if (a.name > b.name) {
+                if (a.value > b.value) {
                     return -1
                 }
             }
             else if (ordination === "Crescente") {
-                if (a.name > b.name) {
+                if (a.value > b.value) {
                     return 1
                 }
-                if (a.name < b.name) {
+                if (a.value < b.value) {
                     return -1
                 }
             }
@@ -85,14 +85,14 @@ export const Home = ({ productList, cart, setCart, amount, setAmount, stateOrdin
                     <QuantProducts>Quantidade de produtos: {stateOrdination.length} </QuantProducts>
                     <Label>
                         Ordenar:
-                        <select
+                        <Select
                             value={ordination}
                             onChange={handleSelect}
                         >
-                            <option value="" disabled>Selecione</option>
-                            <option value="Decrescente" >Decrescente</option>
-                            <option value="Crescente" >Crescente</option>
-                        </select>
+                            <Option value="" disabled>Selecione</Option>
+                            <Option value="Crescente" >Crescente</Option>
+                            <Option value="Decrescente" >Decrescente</Option>
+                        </Select>
                     </Label>
                 </HeaderHome>
                 <Cards>
