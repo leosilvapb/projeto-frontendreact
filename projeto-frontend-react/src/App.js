@@ -60,6 +60,23 @@ function App() {
     )
   }, [minFilter, maxFilter, searchFilter])
 
+
+  useEffect(() => {
+    setTimeout(() => {
+      const cartSave = JSON.stringify(cart)
+      const amountSave = JSON.stringify(amount)
+      localStorage.setItem("cart", cartSave)
+      localStorage.setItem("amount", amountSave)
+    }, 10)
+  }, [cart])
+
+  useEffect(() => {
+    const loadCart = JSON.parse(localStorage.getItem("cart"))
+    const loadAmount = JSON.parse(localStorage.getItem("amount"))
+    setCart([...loadCart])
+    setAmount(loadAmount)
+  }, [])
+
   return (
     <>
       <GlobalStyles />
