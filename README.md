@@ -1,1 +1,1 @@
-Link do Surge: https://lbn-faruqi-leo-labecommerce.surge.sh/
+Link do Surge: faruqi-leosilva-labecommerce.surge.sh
